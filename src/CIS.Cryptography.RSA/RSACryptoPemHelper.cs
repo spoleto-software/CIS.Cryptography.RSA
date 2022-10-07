@@ -79,6 +79,9 @@ namespace CIS.Cryptography.Rsa
         /// </summary>
         public static string Sign(string privateKeyPemText, string stringToSign)
         {
+            if (privateKeyPemText == null)
+                throw new ArgumentNullException(nameof(privateKeyPemText));
+
             using var csp = CreateRsaProviderFromPrivateKey(privateKeyPemText);
 
             var originalData = Encoding.UTF8.GetBytes(stringToSign);
@@ -92,6 +95,9 @@ namespace CIS.Cryptography.Rsa
         /// </summary>
         public static bool Verify(string certificatePemText, string stringToVerify, string expectedSignature)
         {
+            if (certificatePemText == null)
+                throw new ArgumentNullException(nameof(certificatePemText));
+
             using var c = new X509Certificate2(Encoding.UTF8.GetBytes(certificatePemText));
 
             // Get the signature into bytes
@@ -120,6 +126,9 @@ namespace CIS.Cryptography.Rsa
         // вместо ImportPkcs8PrivateKey, ImportRSAPrivateKey, ImportPkcs8PrivateKey
         private static RSA CreateRsaProviderFromPrivateKey(string privateKeyPemText)
         {
+            if (privateKeyPemText == null)
+                return null;
+
             if (privateKeyPemText.IndexOf('-', StringComparison.Ordinal) < 0)
             {
                 return FallbackCreateRsaProviderFromPrivateKey(privateKeyPemText);
@@ -127,7 +136,6 @@ namespace CIS.Cryptography.Rsa
 
             var privateKeyBlocks = privateKeyPemText.Split("-", StringSplitOptions.RemoveEmptyEntries);
 
-            // +++вынести в отдельны нугет
             var base64Key = privateKeyBlocks[1].Replace("\n", "").Replace("\r", "");
             var privateKeyBytes = Convert.FromBase64String(base64Key);
             var rsa = RSA.Create();
@@ -182,11 +190,17 @@ namespace CIS.Cryptography.Rsa
         /// <returns>Сертификат X509Certificate2.</returns>
         public static X509Certificate2 CreateCertificate(string certificatePemText, string privateKeyPemText)
         {
-            using var publicKey = new X509Certificate2(Encoding.UTF8.GetBytes(certificatePemText));
+            if (certificatePemText == null)
+                return null;
+
+            using var publicKeyCertificate = new X509Certificate2(Encoding.UTF8.GetBytes(certificatePemText));
+
+            if (privateKeyPemText == null)
+                return publicKeyCertificate;
 
             using var rsa = CreateRsaProviderFromPrivateKey(privateKeyPemText);
 
-            using var keyPair = publicKey.CopyWithPrivateKey(rsa);
+            using var keyPair = publicKeyCertificate.CopyWithPrivateKey(rsa);
             var certificate = new X509Certificate2(keyPair.Export(X509ContentType.Pfx));
 
             return certificate;
