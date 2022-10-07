@@ -22,10 +22,8 @@
     <!-- Package info -->
     <PropertyGroup>
         <Product>CIS.Cryptography.RSA library</Product>
-        <Description>
-            The helper for creating X509 certificates from a body and a private key in PEM format for .NET Core 3.1.
-            Methods are also available: Sign, Verify data based on PEM.
-        </Description>
+        <Description>The helper for creating X509 certificates from a body and a private key in PEM format for .NET Core 3.1.
+Methods are also available: Sign, Verify data based on PEM.</Description>
         <PackageId>Spoleto.CIS.Cryptography.RSA</PackageId>
         <Authors>OlegNadymov;Spoleto-Software</Authors>
         <Company>SPOLETO Software Development</Company>
