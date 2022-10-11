@@ -35,9 +35,9 @@ Methods are also available: Sign, Verify data based on PEM.</Description>
         <PackageTags>RSA; PEM; X509; X509Certificate; X509Certificate2</PackageTags>
         <Copyright>Copyright © $([System.DateTime]::Now.Year.ToString())</Copyright>
         <PackageReleaseNotes></PackageReleaseNotes>
-        <Version>$([System.DateTime]::Now.AddYears(-2020).Year.ToString()).$([System.DateTime]::Now.ToString("MM.dd.HHmm"))</Version>
-        <AssemblyVersion>$([System.DateTime]::Now.AddYears(-2020).Year.ToString()).$([System.DateTime]::Now.ToString("MM.dd.HHmm"))</AssemblyVersion>
-        <FileVersion>$([System.DateTime]::Now.AddYears(-2020).Year.ToString()).$([System.DateTime]::Now.ToString("MM.dd.HHmm"))</FileVersion>
+        <Version>$([System.DateTime]::Now.AddYears(-2021).Year.ToString()).$([System.DateTime]::Now.ToString("MM.dd.HHmm"))</Version>
+        <AssemblyVersion>$([System.DateTime]::Now.AddYears(-2021).Year.ToString()).$([System.DateTime]::Now.ToString("MM.dd.HHmm"))</AssemblyVersion>
+        <FileVersion>$([System.DateTime]::Now.AddYears(-2021).Year.ToString()).$([System.DateTime]::Now.ToString("MM.dd.HHmm"))</FileVersion>
         <PackageReadmeFile>README.md</PackageReadmeFile>
     </PropertyGroup>
 
