@@ -1,5 +1,5 @@
 # Run these tests if tests were changed.
-name: Run Tests By Tests5
+name: Run Tests By Tests
 
 on:
   push:

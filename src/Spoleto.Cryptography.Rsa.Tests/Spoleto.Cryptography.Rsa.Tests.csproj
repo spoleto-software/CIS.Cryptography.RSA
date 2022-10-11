@@ -17,7 +17,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Spoleto.Cryptography.RSA\Spoleto.Cryptography.Rsa.csproj" />
+    <ProjectReference Include="..\Spoleto.Cryptography.Rsa\Spoleto.Cryptography.Rsa.csproj" />
   </ItemGroup>
 
 </Project>
