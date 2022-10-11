@@ -91,7 +91,7 @@ namespace Spoleto.Cryptography.Rsa
         }
 
         /// <summary>
-        /// Проверка с помощью публичного ключа зашифрованного значения  (на основе .NET Core System.Security.Cryptography).
+        /// Проверка с помощью публичного ключа зашифрованного значения (на основе .NET Core System.Security.Cryptography).
         /// </summary>
         public static bool Verify(string certificatePemText, string stringToVerify, string expectedSignature)
         {

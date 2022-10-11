@@ -8,7 +8,7 @@ Methods are also available: Sign, Verify data based on PEM.
 // Create certificate from the body and the private key in PEM format
 var certificate = RSACryptoPemHelper.CreateCertificate(certificatePemText, privateKeyPemText);
 
-var data = "The string to sign";
+var data = "The string to sign.";
 
 // Sign data by the private key:
 var signedData = RSACryptoPemHelper.Sign(privateKeyPemText, data);
