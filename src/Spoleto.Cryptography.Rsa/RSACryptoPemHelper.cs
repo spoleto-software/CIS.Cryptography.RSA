@@ -155,7 +155,10 @@ namespace Spoleto.Cryptography.Rsa
 
             return rsa;
         }
-
+        
+        /// <summary>
+        /// Fallback to create RSA with the private key from a PEM file without headers.
+        /// </summary>
         private static RSA FallbackCreateRsaProviderFromPrivateKey(string privateKeyPemText)
         {
             var privateKeyBytes = Convert.FromBase64String(privateKeyPemText);
