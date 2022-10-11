@@ -5,6 +5,9 @@
     /// </summary>
     internal static class TestData
     {
+        /// <summary>
+        /// The test certificate.
+        /// </summary>
         public static Certificate TestCertificate = new()
         {
             Body = @"-----BEGIN CERTIFICATE-----
