@@ -15,8 +15,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "WorkFlow", "WorkFlow", "{BC
 	ProjectSection(SolutionItems) = preProject
 		.github\workflows\publish-to-nuget.yml = .github\workflows\publish-to-nuget.yml
 		.github\workflows\run-tests-by-logic.yml = .github\workflows\run-tests-by-logic.yml
-		.github\workflows\run-tests-by-tests.yml = .github\workflows\run-tests-by-tests.yml
 		.github\workflows\update-license.yml = .github\workflows\update-license.yml
+		.github\workflows\run-tests-by-tests5.yml = .github\workflows\run-tests-by-tests5.yml
 		.github\workflows\update-readme.yml = .github\workflows\update-readme.yml
 	EndProjectSection
 EndProject
