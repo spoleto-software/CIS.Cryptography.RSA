@@ -2,9 +2,9 @@
 
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
-	  <AssemblyName>CIS.Cryptography.Rsa</AssemblyName>
-	  <RootNamespace>CIS.Cryptography.Rsa</RootNamespace>
-	  <Title>CIS.Cryptography.Rsa</Title>
+	  <AssemblyName>Spoleto.Cryptography.Rsa</AssemblyName>
+	  <RootNamespace>Spoleto.Cryptography.Rsa</RootNamespace>
+	  <Title>Spoleto.Cryptography.Rsa</Title>
 	  <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
 	  <DocumentationFile>bin\$(Configuration)\$(AssemblyName).xml</DocumentationFile>
 	  <GenerateDocumentationFile>True</GenerateDocumentationFile>
@@ -21,15 +21,15 @@
 
     <!-- Package info -->
     <PropertyGroup>
-        <Product>CIS.Cryptography.RSA library</Product>
+        <Product>Spoleto.Cryptography.RSA library</Product>
         <Description>The helper for creating X509 certificates from a body and a private key in PEM format for .NET Core 3.1.
 Methods are also available: Sign, Verify data based on PEM.</Description>
-        <PackageId>Spoleto.CIS.Cryptography.RSA</PackageId>
+        <PackageId>Spoleto.Cryptography.RSA</PackageId>
         <Authors>OlegNadymov;Spoleto-Software</Authors>
         <Company>SPOLETO Software Development</Company>
         <PackageIcon>MainIcon.jpg</PackageIcon>
         <PackageProjectUrl>https://spoleto.ru</PackageProjectUrl>
-        <RepositoryUrl>https://github.com/spoleto-software/CIS.Cryptography.RSA</RepositoryUrl>
+        <RepositoryUrl>https://github.com/spoleto-software/Spoleto.Cryptography.RSA</RepositoryUrl>
         <RepositoryType>git</RepositoryType>
         <PackageLicenseExpression>MIT</PackageLicenseExpression>
         <PackageTags>RSA; PEM; X509; X509Certificate; X509Certificate2</PackageTags>

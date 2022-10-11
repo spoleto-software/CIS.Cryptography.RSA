@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.4.32804.182
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CIS.Cryptography.Rsa", "src\CIS.Cryptography.RSA\CIS.Cryptography.Rsa.csproj", "{2C5DD3EB-C824-4B2F-9223-754FF5F807F9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Spoleto.Cryptography.Rsa", "src\Spoleto.Cryptography.Rsa\Spoleto.Cryptography.Rsa.csproj", "{2C5DD3EB-C824-4B2F-9223-754FF5F807F9}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{73FB7672-899F-4833-AE2C-177B4BAC0E70}"
 	ProjectSection(SolutionItems) = preProject
@@ -14,9 +14,13 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "WorkFlow", "WorkFlow", "{BC629897-93D7-461F-BDBA-8C5D71640D33}"
 	ProjectSection(SolutionItems) = preProject
 		.github\workflows\publish-to-nuget.yml = .github\workflows\publish-to-nuget.yml
+		.github\workflows\run-tests-by-logic.yml = .github\workflows\run-tests-by-logic.yml
+		.github\workflows\run-tests-by-tests.yml = .github\workflows\run-tests-by-tests.yml
+		.github\workflows\update-license.yml = .github\workflows\update-license.yml
+		.github\workflows\update-readme.yml = .github\workflows\update-readme.yml
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CIS.Cryptography.Rsa.Tests", "CIS.Cryptography.Rsa.Tests\CIS.Cryptography.Rsa.Tests.csproj", "{FC811595-85CA-4489-A411-911093AF6AF1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Spoleto.Cryptography.Rsa.Tests", "src\Spoleto.Cryptography.Rsa.Tests\Spoleto.Cryptography.Rsa.Tests.csproj", "{D3DA7A87-E96B-4F27-970F-170D385F66CF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -28,10 +32,10 @@ Global
 		{2C5DD3EB-C824-4B2F-9223-754FF5F807F9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2C5DD3EB-C824-4B2F-9223-754FF5F807F9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2C5DD3EB-C824-4B2F-9223-754FF5F807F9}.Release|Any CPU.Build.0 = Release|Any CPU
-		{FC811595-85CA-4489-A411-911093AF6AF1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{FC811595-85CA-4489-A411-911093AF6AF1}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{FC811595-85CA-4489-A411-911093AF6AF1}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{FC811595-85CA-4489-A411-911093AF6AF1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D3DA7A87-E96B-4F27-970F-170D385F66CF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D3DA7A87-E96B-4F27-970F-170D385F66CF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D3DA7A87-E96B-4F27-970F-170D385F66CF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D3DA7A87-E96B-4F27-970F-170D385F66CF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

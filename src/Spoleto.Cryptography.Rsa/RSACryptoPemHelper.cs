@@ -8,7 +8,7 @@ using System.Text;
 //using Org.BouncyCastle.OpenSsl;
 //using Org.BouncyCastle.Security;
 
-namespace CIS.Cryptography.Rsa
+namespace Spoleto.Cryptography.Rsa
 {
     /// <summary>
     /// Хелпер для работы с криптографией (аналог OpenSSL).

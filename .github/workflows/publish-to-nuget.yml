@@ -1,11 +1,15 @@
 name: Publish Packages
 
 on:
-  push:
-    branches: [ "main" ]
+    workflow_run:
+        workflows: ["Run Tests By Logic", "Update README", "Update LICENSE"]
+        branches: [ "main" ]
+        types: 
+            - completed
 
 jobs:
-  build:
+  build-publish:
+    if: ${{ github.event.workflow_run.conclusion == 'success' }}
 
     runs-on: ubuntu-latest
 
@@ -16,14 +20,14 @@ jobs:
       with:
         dotnet-version: 3.1.x
     - name: Restore dependencies
-      run: dotnet restore src/CIS.Cryptography.RSA/CIS.Cryptography.Rsa.csproj
+      run: dotnet restore src/Spoleto.Cryptography.Rsa/Spoleto.Cryptography.Rsa.csproj
     - name: Build
-      run: dotnet build src/CIS.Cryptography.RSA/CIS.Cryptography.Rsa.csproj --configuration Release --no-restore
+      run: dotnet build src/Spoleto.Cryptography.Rsa/Spoleto.Cryptography.Rsa.csproj --configuration Release --no-restore
     - name: Publish to Nuget
       uses: brandedoutcast/publish-nuget@v2.5.5
       with:
           # Filepath of the project to be packaged, relative to root of repository
-          PROJECT_FILE_PATH: src/CIS.Cryptography.RSA/CIS.Cryptography.Rsa.csproj
+          PROJECT_FILE_PATH: src/Spoleto.Cryptography.Rsa/Spoleto.Cryptography.Rsa.csproj
           # API key to authenticate with NuGet server
           NUGET_KEY: ${{secrets.NUGET_API_KEY}}
           # Flag to toggle pushing symbols along with nuget package to the server, disabled by default
