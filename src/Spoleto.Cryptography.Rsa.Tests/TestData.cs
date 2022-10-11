@@ -1,5 +1,8 @@
 ﻿namespace Spoleto.Cryptography.Rsa.Tests
 {
+    /// <summary>
+    /// The test data.
+    /// </summary>
     internal static class TestData
     {
         public static Certificate TestCertificate = new()
