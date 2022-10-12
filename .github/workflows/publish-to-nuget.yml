@@ -24,9 +24,8 @@ jobs:
     - id: modified
       uses: pheel/path-watcher-action@v1
       with:
-          github_token: ${{ secrets.GITHUB_TOKEN }} # no need to set this secret, it is always available!
+          #github_token: ${{ secrets.GITHUB_TOKEN }} # no need to set this secret, it is always available!
           paths: 'src/Spoleto.Cryptography.Rsa/**'
-          return_files: false # if true, return an array of the modified paths. defaults to false.
   
     - name: Setup .NET
       uses: actions/setup-dotnet@v2
@@ -43,9 +42,9 @@ jobs:
       name: Test with the dotnet CLI
       run: dotnet test --no-restore --logger "trx;LogFileName=test-results.trx"
 
-    - name: Tests report
+    - if: steps.modified.outputs.modified && ( success() || failure() ) # run this step if there are changes in the source project and even previous step failed
+      name: Tests report
       uses: dorny/test-reporter@v1.5.0
-      if: steps.modified.outputs.modified && ( success() || failure() ) # run this step if there are changes in the source project and even previous step failed
       with:
         name: Test results
         path: '**/test-results.trx'
