@@ -31,9 +31,7 @@ jobs:
     - name: Setup .NET
       uses: actions/setup-dotnet@v2
       with:
-        dotnet-version: | 
-            3.1.x
-            6.0.x
+        dotnet-version: 6.0.x
 
     - name: Restore dependencies
       run: dotnet restore
@@ -41,8 +39,8 @@ jobs:
     - name: Build
       run: dotnet build --configuration Release --no-restore
 
-    - name: Test with the dotnet CLI
-      #if: steps.modified.outputs.modified # run this step if there are changes in the source project
+    - if: steps.modified.outputs.modified # run this step if there are changes in the source project 
+      name: Test with the dotnet CLI
       run: dotnet test --no-restore --logger "trx;LogFileName=test-results.trx"
 
     - name: Tests report
@@ -54,7 +52,7 @@ jobs:
         reporter: dotnet-trx
 
     - name: Publish to Nuget
-      uses: brandedoutcast/publish-nuget@v2.5.5
+      uses: alirezanet/publish-nuget@v3.0.4
       with:
           # Filepath of the project to be packaged, relative to root of repository
           PROJECT_FILE_PATH: src/Spoleto.Cryptography.Rsa/Spoleto.Cryptography.Rsa.csproj
@@ -62,3 +60,6 @@ jobs:
           NUGET_KEY: ${{secrets.NUGET_API_KEY}}
           # Flag to toggle pushing symbols along with nuget package to the server, disabled by default
           INCLUDE_SYMBOLS: true
+          # Flag to toggle git tagging, enabled by default
+          TAG_COMMIT: false
+
