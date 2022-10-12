@@ -14,10 +14,7 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "WorkFlow", "WorkFlow", "{BC629897-93D7-461F-BDBA-8C5D71640D33}"
 	ProjectSection(SolutionItems) = preProject
 		.github\workflows\publish-to-nuget.yml = .github\workflows\publish-to-nuget.yml
-		.github\workflows\run-tests-by-logic.yml = .github\workflows\run-tests-by-logic.yml
 		.github\workflows\run-tests-by-tests.yml = .github\workflows\run-tests-by-tests.yml
-		.github\workflows\update-license.yml = .github\workflows\update-license.yml
-		.github\workflows\update-readme.yml = .github\workflows\update-readme.yml
 	EndProjectSection
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Spoleto.Cryptography.Rsa.Tests", "src\Spoleto.Cryptography.Rsa.Tests\Spoleto.Cryptography.Rsa.Tests.csproj", "{D3DA7A87-E96B-4F27-970F-170D385F66CF}"

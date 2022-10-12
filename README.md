@@ -5,7 +5,7 @@ Methods are also available: Sign, Verify data based on PEM.
 
 ## Examples:
 ```
-// Create certificate from the body and the private key in PEM format
+// Create certificate from the body and the private key in PEM format:
 var certificate = RSACryptoPemHelper.CreateCertificate(certificatePemText, privateKeyPemText);
 
 var data = "The string to sign.";
