@@ -13,7 +13,6 @@ on:
     branches: [ main ]
 
 jobs:
-
   Build-Tests-Publish:
 
     runs-on: ubuntu-latest
@@ -29,7 +28,6 @@ jobs:
     - name: Build
       run: dotnet build --configuration Release --no-restore
     - name: Test with the dotnet CLI
-    #- if: steps.modified.outputs.modified # run this step if there are changes in the source project
       run: dotnet test --no-restore --logger "trx;LogFileName=test-results.trx"
     - name: Tests report
       uses: dorny/test-reporter@v1.5.0
