@@ -16,3 +16,7 @@ var signedData = RSACryptoPemHelper.Sign(privateKeyPemText, data);
 // Verify signed data by the public key in the certificate:
 var isVerified = RSACryptoPemHelper.Verify(certificatePemText, data, signedData);
 ```
+
+## Unit tests
+You can find the unit tests here:
+https://github.com/spoleto-software/Spoleto.Cryptography.RSA/tree/main/src/Spoleto.Cryptography.Rsa.Tests
