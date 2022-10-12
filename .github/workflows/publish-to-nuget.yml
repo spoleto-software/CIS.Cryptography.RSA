@@ -3,10 +3,10 @@ name: Publish Packages
 on:
   push:
     branches: [ "main" ]
-    #paths:
-    #  - 'src/Spoleto.Cryptography.Rsa/**'
-    #  - 'LICENSE'
-    #  - 'README.md'
+    paths:
+      - 'src/Spoleto.Cryptography.Rsa/**'
+      - 'LICENSE'
+      - 'README.md'
       #- 'src/**'
       #- '!src/**.Tests/**'
   pull_request:
