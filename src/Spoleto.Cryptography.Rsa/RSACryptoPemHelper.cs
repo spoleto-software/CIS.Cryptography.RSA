@@ -121,7 +121,7 @@ namespace Spoleto.Cryptography.Rsa
             return false;
         }
 
-        //TODO: После обновления на NET 6 или выше
+        //TODO: После обновления на NET 6 или выше 
         // попробовать использовать нативный NET метод System.Security.Cryptography.RSA.ImportFromEncryptedPem
         // вместо ImportPkcs8PrivateKey, ImportRSAPrivateKey, ImportPkcs8PrivateKey.
         private static RSA CreateRsaProviderFromPrivateKey(string privateKeyPemText)
