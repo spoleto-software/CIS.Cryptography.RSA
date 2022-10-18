@@ -93,12 +93,12 @@ namespace Spoleto.Cryptography.Rsa
         /// <summary>
         /// Проверка с помощью публичного ключа зашифрованного значения (на основе .NET Core System.Security.Cryptography).
         /// </summary>
-        public static bool Verify(string certificatePemText, string stringToVerify, string expectedSignature)
+        public static bool Verify(string certificatePemText, string stringToVerify, string expectedSignature, string password = null)
         {
             if (certificatePemText == null)
                 throw new ArgumentNullException(nameof(certificatePemText));
 
-            using var c = new X509Certificate2(Encoding.UTF8.GetBytes(certificatePemText));
+            using var c = new X509Certificate2(Encoding.UTF8.GetBytes(certificatePemText), password);
 
             // Get the signature into bytes
             var expectedSignatureBytes = Convert.FromBase64String(expectedSignature);
@@ -190,13 +190,14 @@ namespace Spoleto.Cryptography.Rsa
         /// </summary>
         /// <param name="certificatePemText">Тело в формате PEM.</param>
         /// <param name="privateKeyPemText">Приватный ключ в формате PEM.</param>
+        /// <param name="password">Пароль к сертификату.</param>
         /// <returns>Сертификат X509Certificate2.</returns>
-        public static X509Certificate2 CreateCertificate(string certificatePemText, string privateKeyPemText)
+        public static X509Certificate2 CreateCertificate(string certificatePemText, string privateKeyPemText, string password = null)
         {
             if (certificatePemText == null)
                 return null;
 
-            using var publicKeyCertificate = new X509Certificate2(Encoding.UTF8.GetBytes(certificatePemText));
+            using var publicKeyCertificate = new X509Certificate2(Encoding.UTF8.GetBytes(certificatePemText), password);
 
             if (privateKeyPemText == null)
                 return publicKeyCertificate;
